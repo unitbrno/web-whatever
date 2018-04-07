@@ -1,0 +1,68 @@
+admin:
+    signOut: 'Sign out'
+
+sign:
+    signedOut: 'You have been signed out successfully.'
+    userNotFound: 'User not found.'
+    passwordAlreadySet: 'Password has already been set.'
+    invalidToken: 'Invalid token. Access denied.'
+
+base:
+    notSignedIn: 'You must be logged in to access this page.'
+    today: 'Today'
+    tomorrow: 'Tomorrow'
+
+layout:
+    signOut: 'Logout'
+
+landing:
+    planDay: 'Plan your day!'
+    chooseStart: 'Start by choosing your starting location'
+    typeAddress: 'Type address'
+    startPlanning: 'Start planning'
+    seeHow: 'See how it works'
+    features: 'Features'
+    feature1: 'Easy planning'
+    featureDescription1: 'Just add all places you want to visit'
+    feature2: 'Suggestions'
+    featureDescription2: 'Get suggestions for nearby places'
+    feature3: 'Mobile friendly'
+    featureDescription3: 'Fully responsive user interface'
+    how: 'How it works'
+    how1: 'Choose your starting point'
+    howDescription1: 'Type the location marked as beginning of your journey'
+    how2: 'Add more locations'
+    howDescription2: 'Add all locations you want to visit during your day'
+    how3: 'Get your plan'
+    howDescription3: 'Instantly get shortest calculated route between your locations'
+    partners: 'Partners'
+    copyright: 'Created for UNIT in Brno'
+
+planning:
+    chooseCategory: 'Choose a category'
+    food: 'Food'
+    park: 'Park'
+    sport: 'Sport'
+    museum: 'Museum'
+    supermarket: 'Supermarket'
+    suggestions: 'Suggestions'
+    map: 'Map'
+    route: 'Route'
+    isDelayed: 'Is delayed'
+    addNewPlace: 'Add a new place'
+    notFound: 'Place not found'
+    location: 'Location'
+    flexible: "I'm flexible"
+    arrivalDate: 'Arrival date'
+    arrivalTime: 'Arrival time'
+    timeSpent: 'Time spent'
+    hours: 'Hours'
+    minutes: 'Minutes'
+    optionMinutes: 'minutes'
+    addPlace: 'Add place'
+    discard: 'Discard'
+    expandAll: 'Expand All'
+    collapseAll: 'Collapse All'
+    routeNotFound: 'Route was not found'
+    onlyWalkingRoute: 'Only walking route was found'
+    export: 'Export'

@@ -1,0 +1,308 @@
+{var $pageIdentifier = 'planning'}
+{var $usesGoogleMaps = true}
+
+{block content}
+    <div tabindex="-1" class="modal fade" id="point-form" style="display: none;" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bordered">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×
+                    </button>
+                    <h2 class="pmd-card-title-text">
+                        {_front.planning.addNewPlace}
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+
+                        <div class="alert alert-danger place-not-found-error">{_front.planning.notFound}</div>
+
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <label for="first-name">{_front.planning.location}</label>
+                            <input type="text" class="address-input mat-input form-control"
+                                   placeholder=""><span class="pmd-textfield-focused"></span>
+                            <!--<span class="help-text">Input is required!</span>-->
+                        </div>
+
+                        <div class="group-fields clearfix row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group pmd-textfield pmd-textfield-floating-label start-date-container">
+                                    <label for="first-name">
+                                        {_front.planning.arrivalDate}
+                                    </label>
+                                    <input type="text" class="mat-input form-control start-date-input"
+                                           value="Dnes"><span class="pmd-textfield-focused"></span>
+                                    <div class="spinner">
+                                        <div class="spinner-icon up pmd-btn-flat btn-default pmd-ripple-effect button-up">
+                                            <i class="material-icons md-dark pmd-sm">arrow_drop_up</i>
+                                        </div>
+                                        <div class="spinner-icon down pmd-btn-flat btn-default pmd-ripple-effect button-down">
+                                            <i class="material-icons md-dark pmd-sm">arrow_drop_down</i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group pmd-textfield pmd-textfield-floating-label start-time-container">
+                                    <label for="first-name">
+                                        {_front.planning.arrivalTime}
+                                    </label>
+                                    <input type="text" class="mat-input form-control start-time-input" value=""><span class="pmd-textfield-focused"></span>
+                                    <div class="spinner">
+                                        <div class="spinner-icon up pmd-btn-flat btn-default pmd-ripple-effect button-up">
+                                            <i class="material-icons md-dark pmd-sm">arrow_drop_up</i>
+                                        </div>
+                                        <div class="spinner-icon down pmd-btn-flat btn-default pmd-ripple-effect button-down">
+                                            <i class="material-icons md-dark pmd-sm">arrow_drop_down</i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group-fields clearfix row">
+                            <div class="col-xs-12">
+                                <p class="h4">
+                                    {_front.planning.timeSpent}
+                                </p>
+                                <label class="pmd-checkbox checkbox-pmd-ripple-effect">
+                                    <input type="checkbox" value="" class="duration-checkbox pm-ini"
+                                           id="check-disabled"><span
+                                            class="pmd-checkbox-label">&nbsp;</span>
+                                    <span>
+                                                            {_front.planning.flexible}
+                                                            </span>
+                                </label>
+                            </div>
+                            <div class="collapse col-xs-12" id="collapseTimeSpent">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                        <label for="regular1" class="control-label">
+                                            {_front.planning.hours}
+                                        </label>
+                                        <input type="text" id="regular1" class="duration-hours-input form-control time-range-picker"><span class="pmd-textfield-focused"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                        <label>
+                                            {_front.planning.minutes}
+                                        </label>
+                                        <select class="duration-minutes-select select-simple form-control pmd-select2 time-range-picker">
+                                            <!--<option></option> -->
+                                            <option>0 {_front.planning.optionMinutes}</option>
+                                            <option>15 {_front.planning.optionMinutes}</option>
+                                            <option>30 {_front.planning.optionMinutes}</option>
+                                            <option>45 {_front.planning.optionMinutes}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="pmd-modal-action">
+                    <button data-dismiss="modal" class="submit-button btn pmd-ripple-effect btn-primary"
+                            type="button">{_front.planning.addPlace}
+                    </button>
+                    <button data-dismiss="modal" class="discard-button btn pmd-ripple-effect btn-default"
+                            type="button">{_front.planning.discard}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <section>
+        <div class="container-fluid planning-page-container">
+            <div class="pmd-tabs pmd-tabs-bg invisible">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation"><a href="#suggestions" aria-controls="suggestions"
+                                               role="tab" data-toggle="tab">{_front.planning.suggestions}</a></li>
+                    <li role="presentation"><a href="#map" aria-controls="map" role="tab" data-toggle="tab">{_front.planning.map}</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="#map-sidebar" aria-controls="map-sidebar" role="tab"
+                                                              data-toggle="tab">{_front.planning.route}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <div role="tabpanel" class="col-md-3 reset-padding place-suggestions-container" id="suggestions">
+                    <div class="places-suggestion-filter">
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label"  style="padding-left: 20px; padding-right: 20px;">
+                            <label>{_front.planning.chooseCategory}</label>
+                            <select class="form-control select-add-tags pmd-select2-tags" multiple>
+                                <option value="restaurant">{_front.planning.food}</option>
+                                <option value="park">{_front.planning.park}</option>
+                                <option value="gym">{_front.planning.sport}</option>
+                                <option value="museum">{_front.planning.museum}</option>
+                                <option value="supermarket">{_front.planning.supermarket}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <ul class="places-suggests" id="places-sug">
+                    </ul>
+                </div>
+                <div role="tabpanel" class="col-md-6 reset-padding" id="map">
+                    <div style="width:100%;max-width:100%;" id="google-maps-display">
+                        <div style="height:100%; width:100%; max-width:100%;" id="map-control"></div>
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="col-md-3 reset-padding place-container" id="map-sidebar">
+
+                    <!-- Expand / collapse controls -->
+                    <div class="container-fluid collapse-buttons">
+                        <div class="row">
+                            <button class="col-xs-6 btn pmd-ripple-effect btn-default " data-target="accordion2"
+                                    id="expandAll">
+                                {_front.planning.expandAll}
+
+                            </button>
+                            <button class="col-xs-6 btn pmd-ripple-effect btn-default" data-target="accordion2"
+                                    id="collapseAll">
+                                {_front.planning.collapseAll}
+
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- List item templates -->
+                    <div class="list-item-template" style="display: none">
+
+                        <!-- Point -->
+                        <div class="point-template panel panel-default">
+
+                            <div class="place media" role="tab" data-id="headingOne">
+                                <div class="media-left placeholder-icon">
+                                    <img src="{$basePath}/assets/images/placeholder.png" alt="">
+                                    <span class="place-number placeholder-number"></span>
+                                </div>
+                                <a class="expand-routes-button media-body" data-toggle="collapse"
+                                   data-parent="#accordion2"
+                                   href="#collapseOne2" aria-expanded="true"
+                                   aria-controls="collapseOne2" data-expandable="true">
+                                    <div class="place-details">
+                                        <span class="place-time"></span>
+                                        <span class="place-name"></span>
+                                    </div>
+                                    <div class="place-details2">
+                                        <span class="place-address text-muted"></span>
+                                    </div>
+                                    <!-- warning -->
+                                    <p style="display:none" class="warning-delayed message-text warning">
+                                        <i class="material-icons pmd-xs">warning</i>
+                                        {_front.planning.isDelayed}
+                                    </p>
+                                    <!-- errorr -->
+                                    <p style="display:none" class="error-no-route message-text error">
+                                        <i class="material-icons pmd-xs">error</i>
+                                        {_front.planning.routeNotFound}
+                                    </p>
+                                    <!-- errorr -->
+                                    <p style="display:none" class="error-walking message-text error">
+                                        <i class="material-icons pmd-xs">error</i>
+                                        {_front.planning.onlyWalkingRoute}
+                                    </p>
+                                </a>
+                            </div>
+
+                            <!-- Routes -->
+                            <div data-id="collapseOne2" class="routes-container panel-collapse collapse in"
+                                 role="tabpanel"
+                                 aria-labelledby="headingOne">
+                            </div>
+
+                            <span class="dropdown pmd-dropdown clearfix place-more">
+                                    <button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary"
+                                            type="button"
+                                            data-id="dropdownMenuBottomRight" data-toggle="dropdown"
+                                            aria-expanded="true"><i
+                                                class="material-icons pmd-sm">more_vert</i></button>
+                                    <ul aria-labelledby="dropdownMenuDivider" role="menu"
+                                        class="dropdown-menu dropdown-menu-right">
+                                        <li role="presentation"><a href="#" tabindex="-1" role="menuitem"
+                                                                   class="delete-button">{_front.planning.discard}</a></li>
+                                    </ul>
+                                </span>
+                        </div>
+
+                        <!-- Route Transit -->
+                        <div class="transit-template place route media">
+                            <div class="media-left">
+                                <i class="material-icons md-dark pmd-sm vehicle-icon">directions_transit</i>
+                                <span class="mhd-number" style="color: white; background: red"></span>
+                            </div>
+                            <div class="media-body">
+                                <div class="place-details">
+                                    <span class="place-length text-muted"></span>
+                                    <span class="place-time"></span>
+                                    <span class="place-name"></span>
+                                </div>
+                                <div class="place-details2">
+                                    <span class="place-address text-muted"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Route Walk -->
+                        <div class="walk-template place route media">
+                            <div class="media-left">
+                                <i class="material-icons md-dark pmd-sm">directions_walk</i>
+                            </div>
+                            <div class="media-body">
+                                <div class="place-details">
+                                    <span class="place-length text-muted"></span>
+                                    <span class="place-time"></span>
+                                    <span class="place-name"></span>
+                                </div>
+                                <div class="place-details2">
+                                    <span class="place-address text-muted"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Last point -->
+                        <div class="panel panel-default">
+                            <div class="place media" role="tab" id="headingOne">
+                                <div class="media-left placeholder-icon">
+                                    <img src="{$basePath}/assets/images/placeholder.png" alt="">
+                                    <span class="placeholder-number">2</span>
+                                </div>
+                                <div class="media-body">
+                                    <div class="place-details">
+                                        <span class="place-length text-muted">45m</span>
+                                        <span class="place-time">18:15</span>
+                                        <span class="place-name">Hospoda</span>
+                                    </div>
+                                    <div class="place-details2">
+                                        <span class="place-address text-muted">Kounicova 10</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- List -->
+                    <div class="places-list panel-group pmd-accordion pmd-accordion-nospace" id="accordion2"
+                         role="tablist"
+                         aria-multiselectable="true">
+                    </div>
+
+                    <!-- Action buttons -->
+                    <div class="action-buttons">
+                        <a id="add-point-button" class="add-point-button btn pmd-btn-raised pmd-ripple-effect btn-success" data-target="#add-place"
+                           data-toggle="modal" role="button">
+                            {*<i class="material-icons pmd-sm">add</i>*}
+                            <span>{_front.planning.addNewPlace}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{/block}

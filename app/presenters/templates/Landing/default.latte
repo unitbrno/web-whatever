@@ -1,0 +1,133 @@
+{var $pageIdentifier = 'landing'}
+{var $usesGoogleMaps = true}
+
+{block content}
+<div class="page-landing">
+    <section class="start-planning">
+        <div class="container">
+            <div class="jumbotron">
+                <div class="text-center header">
+                    <h1>{_front.landing.planDay}</h1>
+                    <p>{_front.landing.chooseStart}</p>
+                </div>
+                <div class="row" id="start-planning-form" data-url="{link Planning:}">
+                    <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <label for="inputError1" class="control-label pmd-input-group-label">{_front.landing.typeAddress}</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="material-icons md-light pmd-sm">location_on</i>
+                                </div>
+                                <input type="text" class="form-control address-input" placeholder="">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a class="btn btn-lg pmd-btn-raised pmd-ripple-effect btn-primary start-planning-button" href="#">
+                                {_front.landing.startPlanning}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center button-link">
+            <a class="anchor" href="#howItWorks">{_front.landing.seeHow}</a>
+        </div>
+    </section>
+    <section class="features">
+        <div class="container">
+            <h1 class="text-center display">{_front.landing.features}</h1>
+            <div class="row">
+                <div class="col-sm-4 feature text-center">
+                    <div class="feature-icon square">
+                        <i class="content material-icons md-dark pmd-md">add_location</i>
+                    </div>
+                    <h2 class="display">{_front.landing.feature1}</h2>
+                    <p class="lead">{_front.landing.featureDescription1}</p>
+                </div>
+                <div class="col-sm-4 feature text-center">
+                    <div class="feature-icon square">
+                        <i class="content material-icons md-dark pmd-md">lightbulb_outline</i>
+                    </div>
+                    <h2 class="display">{_front.landing.feature2}</h2>
+                    <p class="lead">
+                        {_front.landing.featureDescription2}
+                    </p>
+                </div>
+                <div class="col-sm-4 feature text-center">
+                    <div class="feature-icon square">
+                        <i class="content material-icons md-dark pmd-md">stay_current_portrait</i>
+                    </div>
+                    <h2 class="display">{_front.landing.feature3}</h2>
+                    <p class="lead">{_front.landing.featureDescription3}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="how-it-works" id="howItWorks">
+        <div class="container">
+            <h1 class="text-center display">{_front.landing.how}</h1>
+            <div class="row how-step">
+                <div class="col-xs-6">
+                    <img class="img-responsive" src="{$basePath}/assets/images/how1.png" alt="{_front.landing.how1}"/>
+                </div>
+
+                <div class="col-xs-6">
+                    <h2 class="display">{_front.landing.how1}</h2>
+                    <p class="lead">{_front.landing.howDescription1}</p>
+                </div>
+            </div>
+
+            <div class="row how-step">
+                <div class="col-xs-6 text-right">
+                    <h2 class="display">{_front.landing.how2}</h2>
+                    <p class="lead">
+                        {_front.landing.howDescription2}
+                    </p>
+                </div>
+
+                <div class="col-xs-6">
+                    <img class="img-responsive" src="{$basePath}/assets/images/how2.png" alt="{_front.landing.how2}"/>
+                </div>
+            </div>
+
+            <div class="row how-step">
+                <div class="col-xs-6">
+                    <img class="img-responsive" src="{$basePath}/assets/images/how3.png" alt="{_front.landing.how3}"/>
+                </div>
+
+                <div class="col-xs-6">
+                    <h2 class="display">{_front.landing.how3}</h2>
+                    <p class="lead">{_front.landing.howDescription3}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="partners">
+        <div class="container">
+            <h1 class="display text-center">{_front.landing.partners}</h1>
+            <div class="row">
+                <div class="col-sm-4 partner">
+                    <img class="img-responsive" src="http://www.fcsb.cz/wp-content/uploads/2014/10/logo-Brno.gif"/>
+                </div>
+                <div class="col-sm-4 partner">
+                    <img class="img-responsive"
+                         src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Google_maps_logo.png"/>
+                </div>
+                <div class="col-sm-4 partner">
+                    <img class="img-responsive" src="https://unitbrno.cz/wp-content/uploads/2018/02/UnIT-1.png"/>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer class="footer footer-page">
+    <div class="container">
+        <div class="text-center">
+<span>
+    {_front.landing.copyright}
+</span>
+        </div>
+    </div>
+</footer>

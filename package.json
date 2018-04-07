@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "node-sass": "^4.8.3",
+    "propellerkit": "^1.3.1",
+    "propellerkit-custom-scrollbar": "^1.2.0",
+    "propellerkit-datatables": "^1.1.0",
+    "propellerkit-datetimepicker": "^1.2.0",
+    "propellerkit-range-slider": "^1.2.0",
+    "propellerkit-select2": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-flatten": "^0.4.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-uglify": "^3.0.0",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-pngquant": "^5.0.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}

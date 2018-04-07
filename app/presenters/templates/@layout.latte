@@ -1,0 +1,123 @@
+{layout none}
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Login | Propeller - Admin Dashboard">
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+    <title>WhateverBox</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{$basePath}/themes/images/favicon.ico">
+
+    <!-- Google icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="{$basePath}/assets/css/bootstrap.min.css">
+
+    <!-- Propeller css -->
+    <link rel="stylesheet" type="text/css" href="{$basePath}/assets/css/propeller.min.css">
+
+    <!-- Propeller theme css-->
+    <link rel="stylesheet" type="text/css" href="{$basePath}/themes/css/propeller-theme.css"/>
+
+    <!-- Propeller admin theme css-->
+    <link rel="stylesheet" type="text/css" href="{$basePath}/themes/css/propeller-admin.css">
+
+    <!-- Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="http://propeller.in/components/icon/css/google-icons.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Propeller textbox -->
+    <link href="{$basePath}/components/textfield/css/textfield.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Propeller bootstrap datetimepicker -->
+    <link href="{$basePath}/components/datetimepicker/css/bootstrap-datetimepicker.css" type="text/css"
+          rel="stylesheet"/>
+
+    <!-- ProDatatable -->
+    <link href="{$basePath}/components/datetimepicker/css/pmd-datetimepicker.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Propeller checkbox -->
+    <link href="{$basePath}/components/checkbox/css/checkbox.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Range Slider css -->
+    <link href="{$basePath}/components/range-slider/css/nouislider.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Nouislider css-->
+    <link href="{$basePath}/components/range-slider/css/range-slider.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Custom css-->
+    <link rel="stylesheet" type="text/css" href="{$basePath}/dist/css/style.css">
+</head>
+<body class="body-custom" n:attr="isset($pageIdentifier) ? ['data-page' => $pageIdentifier]"
+    data-translations="{=Nette\Utils\Json::encode($translations)}">
+{include content}
+
+
+
+<!-- Scripts Starts -->
+<script src="{$basePath}/assets/js/jquery-1.12.2.min.js"></script>
+<script src="{$basePath}/assets/js/bootstrap.min.js"></script>
+<script src="{$basePath}/assets/js/propeller.min.js"></script>
+<script src="{$basePath}/themes/js/moment.min.js"></script>
+
+<!-- Textfield js -->
+<script type="text/javascript" src="{$basePath}/components/textfield/js/textfield.js"></script>
+
+<!-- Datepicker moment with locales -->
+<script type="text/javascript" language="javascript"
+        src="{$basePath}/components/datetimepicker/js/moment-with-locales.js"></script>
+
+<!-- Propeller Bootstrap datetimepicker -->
+<script type="text/javascript" language="javascript"
+        src="{$basePath}/components/datetimepicker/js/bootstrap-datetimepicker.js"></script>
+
+<!-- Propeller checkbox js -->
+<script type="text/javascript" src="{$basePath}/components/checkbox/js/checkbox.js"></script>
+<!-- Slider js -->
+<script src="{$basePath}/components/range-slider/js/wNumb.js"></script>
+<script src="{$basePath}/components/range-slider/js/nouislider.js"></script>
+
+<!-- Custom JS -->
+<script src="{$basePath}/src/js/main.js"></script>
+
+<script src="{$basePath}/dist/js/script.js"></script>
+
+<!-- Select2 css -->
+<link href="{$basePath}/components/select2/css/select2.min.css" type="text/css" rel="stylesheet"/>
+<link href="{$basePath}/components/select2/css/select2-bootstrap.css" type="text/css" rel="stylesheet"/>
+<!-- Propeller Select2 css -->
+<link href="{$basePath}/components/select2/css/pmd-select2.css" type="text/css" rel="stylesheet"/>
+
+<!-- Select2 js-->
+<script type="text/javascript" src="{$basePath}/components/select2/js/select2.full.js"></script>
+<!-- Propeller Select2 -->
+<script type="text/javascript" src="{$basePath}/components/select2/js/pmd-select2.js"></script>
+
+{if !empty($usesGoogleMaps)}
+    <script>
+        function initMap() {
+            if (window.initWhateverBox === undefined) {
+                window._whateverBoxInitializeImmediately = true;
+            } else {
+                window.initWhateverBox();
+            }
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key={$googleMapsApiKey}&libraries=places&callback=initMap"></script>
+{else}
+    <script>
+        if (window.initWhateverBox === undefined) {
+            window._whateverBoxInitializeImmediately = true;
+        } else {
+            window.initWhateverBox();
+        }
+    </script>
+{/if}
+
+{block scripts}
+{/block}
+</body>
+</html>

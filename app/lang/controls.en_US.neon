@@ -1,0 +1,65 @@
+signInForm:
+    title:
+        signIn: 'Sign In'
+        to: 'to'
+        whateverbox: 'WhateverBox'
+
+    email:
+        label: 'Email address'
+        required: 'Please enter your email address.'
+
+    password:
+        label: 'Password'
+        required: 'Please enter your password.'
+
+    remember:
+        label: 'Remember me'
+
+    send:
+        label: 'Login'
+
+    errors:
+        invalidCredentials: 'The email or password you entered is incorrect.'
+
+    signUp:
+        dontHaveAccount: "Don't have an account?"
+        label: 'Sign Up'
+
+signUpForm:
+    title:
+        signUp: 'Sign Up'
+        to: 'to'
+        whateverbox: 'WhateverBox'
+
+    email:
+        label: 'Email:'
+        required: 'Please enter your email.'
+
+    remember:
+        label: 'Keep me signed in'
+
+    send:
+        label: 'Sign Up'
+
+    errors:
+        alreadyTaken: 'The email is already taken. Please choose another one.'
+
+    signIn:
+        alreadyHaveAccount: 'Already have an account?'
+        label: 'Sign In'
+
+setPasswordForm:
+    title:
+        setPassword: 'Set Password'
+        to: 'to'
+        whateverbox: 'WhateverBox'
+
+    password:
+        label: 'Password'
+        required: 'Please choose a password.'
+
+    remember:
+        label: 'Keep me signed in'
+
+    send:
+        label: 'Set password'

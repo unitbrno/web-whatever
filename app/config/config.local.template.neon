@@ -1,0 +1,30 @@
+#
+# How to configure the application:
+#
+# 1. Create an empty MySQL database and enter its credentials in the `dbal` section.
+#
+# 2. Create a Mailgun account and enter its credentials in the `mail` section. You may need to
+#    change the `senderEmail` parameter to an email address that is allowed by Mailgun.
+#
+# 3. Create a Google Maps API key and update the `googleMapsApiKey` parameter.
+#
+
+dbal:
+    driver: mysqli
+    host: 127.0.0.1
+    username: whateverbox
+    password: xxx
+    database: whateverbox
+
+mail:
+    smtp: true
+    host: smtp.mailgun.org
+    port: 587
+    username: postmaster@mg.fabik.org
+    password: xxx
+    secure: tls
+    timeout: 10
+
+parameters:
+    senderEmail: whateverbox@mg.fabik.org
+    googleMapsApiKey: xxx

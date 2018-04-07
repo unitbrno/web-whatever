@@ -1,0 +1,191 @@
+#google-maps-display {
+  height: calc(100vh - 49px);
+  @media(min-width: $screen-md-min) {
+    height: 100vh;
+  }
+}
+
+.planning-page-container {
+  overflow: hidden;
+  background: white;
+  .add-new {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  .reset-padding {
+    padding: 0;
+  }
+  [disabled].pmd-range-slider .noUi-background .noUi-tooltip {
+    opacity: 0.65;
+  }
+
+  .place-suggestions-container {
+    height: calc(100vh - 49px);
+    @media(min-width: $screen-md-min) {
+      height: 100vh;
+    }
+    overflow: auto;
+
+    .places-suggests {
+      list-style-type: none;
+      padding: 0;
+      overflow: hidden;
+      margin: 0;
+
+      li {
+        width: 100%;
+        float: left;
+
+        .place-thumb-img {
+          width: 100%;
+          height: 175px;
+          background-position: center center;
+          background-size: cover;
+          position: relative;
+
+          &:hover {
+            opacity: 0.88;
+          }
+
+          .place-type {
+            display: none;
+          }
+          .place-thumb-info {
+            background-color: rgba(0, 0, 0, 0.5);
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            position: absolute;
+            padding: 5px 10px;
+
+            .place-name {
+              color: #FFFFFF;
+              margin: 0;
+            }
+            .place-rating {
+              color: #fff700d9;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .place-container {
+    height: calc(100vh - 49px);
+    @media(min-width: $screen-md-min) {
+      height: 100vh;
+    }
+    border-left: 1px solid #dbdcdd;
+
+    .places-list {
+      list-style-type: none;
+      padding: 0;
+      overflow: auto;
+      margin: 0;
+      border-top: 1px solid #dbdcdd;
+      border-bottom: 1px solid #dbdcdd;
+
+      .place {
+        position: relative;
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid #dbdcdd;
+        overflow: visible;
+        padding-right: 40px;
+
+        &.warning:not(.route), &.error:not(.route) {
+          padding-bottom: 4px;
+        }
+
+        .message-text {
+          font-size: 14px;
+          font-weight: 900;
+          margin-top: 1px;
+          margin-bottom: 0;
+          .material-icons {
+            position: relative;
+            top: 2px;
+            font-size: 14px;
+          }
+
+          &.warning {
+            color: darkorange;
+          }
+          &.error {
+            color: orangered;
+          }
+        }
+
+        &.route {
+          margin-top: 0;
+          border-left: 5px solid $dark;
+
+          &.warning {
+            border-left: 5px solid darkorange;
+          }
+
+          &.error {
+            border-left: 5px solid orangered;
+          }
+
+          .media-left {
+            padding-right: 10px;
+            padding-left: 6px;
+            line-height: 100%;
+            vertical-align: middle;
+            text-align: center;
+          }
+        }
+      }
+      .mhd-number {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1rem;
+        line-height: 1rem;
+        font-size: .8rem;
+      }
+      .place-time, .place-name {
+        font-weight: 700;
+        color: #333c4e;
+      }
+      .place-details2 {
+        font-size: 12px;
+      }
+      .place-length {
+        float: right;
+      }
+      .place-details {
+        line-height: 1.3em;
+      }
+      .place-details2 {
+        line-height: 1.2em;
+      }
+
+      .place-more {
+        position: absolute;
+        top: 6px;
+        right: 4px;
+      }
+      .placeholder-icon {
+        position: relative;
+        padding-right: 10px;
+        vertical-align: middle;
+
+        span {
+          position: absolute;
+          top: 50%;
+          left: 11px;
+          color: white;
+          transform: translateY(-68%);
+        }
+      }
+    }
+  }
+  .action-buttons {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+}
